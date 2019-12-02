@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>FINKINO API CALL</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css"> <!-- CSS styling -->
+  <link href="https://fonts.googleapis.com/css?family=Blinker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<!-- get data after a page has been loaded -->
+<body onload="loadData()"> 
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div id="container">
+	  <h1>FINKINO API CALL<img src="https://storage.googleapis.com/twg-content/original_images/finnkino-logo.png" style="width:100px;height:100px;"></h1>
+	  <main>
+			<h2 id="clickHeading" onclick="hideAssignmentDiv()" style="cursor: pointer;">API Assignment (click to show/hide)</h2>
+			<div id="assignment-div">
+				<ul style="list-style-type:circle">
+					<li>Implement a web page, where the user can select a theater from a list</li>
+					<li>The page then shows the pictures and info of the ongoing movies in the selected theatre</li>
+					<li>Display some other info as well, such as showtimes etc.</li>
+					<li>Create nice layout and style for the page</li>
+					<li>Utilize jQuery for Ajax and some nice effects etc.</li>
+					<li>Extra points will be given for input field with custom search string</li>
+					<li>FinnKino REST API can be found at: </li>
+					<li>http://www.finnkino.fi/xml</li>
+					<li>http://www.finnkino.fi/xml/Schedule/</li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="column" id="column-1">
+					<!-- TODO: consider switching to datalist -->
+					Valitse alue<select id="selectCity" onchange="getKinoData()">
+						<option value="Espoo">Espoo</option>
+						<option value="Helsinki" selected>Helsinki</option>
+						<option value="Vantaa">Vantaa</option>
+						<option value="Tampere">Tampere</option>
+					</select>
+					
+					<table id="apidata" onclick="selectOption()"></table>
+				</div>
+				
+				<div class="column" id="column-2">
+					<button id="hae2-btn" onclick="">Promokuva elokuvasta</button>
+					<br>Movie image here
+				</div>
+			</div>
+		</main>
+	<br><br>
+	<footer>&copy;Footer</footer>
+  </div>
+  
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script> <!-- Javascript file -->
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
