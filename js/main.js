@@ -18,7 +18,7 @@ function myFunction(xml) {
 	var i;
 	var xmlDocument = xml.responseXML;
 	var table = "<tr><th>Teatteri</th><th>Elokuva</th><th>Ikäraja</th><th>Promokuva</th></tr>";
-	var x = xmlDocument.getElementsByTagName("Shows");
+	var x = xmlDocument.getElementsByTagName("Show");
 	
 	for (i = 0; i < x.length; i++) {
 		table += "<tr><td>" +
